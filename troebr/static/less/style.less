@@ -1,0 +1,45 @@
+@import "normalize.less";
+
+@import "global-mobile.less";
+
+/* ===== Primary Styles ========================================================
+   Author: rcarton
+   ========================================================================== */
+
+
+
+@import "media-queries.less";
+@import "helpers.less";
+@import "print.less";
+
+
+
+
+@lightgrey: #eaeaea;
+@darkgrey: #605e5e;
+@mediumgrey: #727171;
+
+
+html, body, header {
+    height: 100%;
+}
+
+#header-container {
+    background-color: @lightgrey;
+    height: 43%;
+    border-bottom: 1px solid #ddd3d3;
+    vertical-align: bottom;
+}
+
+header {
+    position: relative;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#logo {
+    position: absolute;
+    bottom: 0;
+    font-size: 22pt;
+    color: @darkgrey;
+    padding-bottom: 0.1em;
+}
