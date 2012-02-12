@@ -5,6 +5,7 @@ lib64/
 src/
 include/
 share/
+dist/
 *.db
 *.pyc
 *.pyd
