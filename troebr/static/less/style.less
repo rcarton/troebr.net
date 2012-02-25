@@ -6,34 +6,52 @@
    Author: rcarton
    ========================================================================== */
 
-
-
 @import "media-queries.less";
 @import "helpers.less";
 @import "print.less";
 
+/* Colors! */
 
-
-
-@lightgrey: #eaeaea;
 @darkgrey: #605e5e;
 @mediumgrey: #727171;
+@bgimgcolor: #3b3b3b;
 
+@pink: #fc559f;
+@lightblue: #50b8d2;
+@blue: #388497;
+
+
+
+@textcolor: #000000;
+@hovercolor: @pink;
 
 html, body, header {
     height: 100%;
+    color: @textcolor;
 }
+
+h1, h2, h3, h4 { font-family: 'Open Sans Condensed', sans-serif; }
+p, li { line-height: 1.42em; }
 
 #header-container {
-    background-color: @lightgrey;
+    background-color: @bgimgcolor;
     height: 43%;
-    border-bottom: 1px solid #ddd3d3;
     vertical-align: bottom;
+    background-image: url('../img/darkdenim3.png');
 }
 
-header {
+#header-container header {
     position: relative;
-    font-family: 'Open Sans Condensed', sans-serif;
+}
+h1 {
+    margin-bottom: 0.1em;
+}
+h1, h1 a, h1 a:visited {
+    color: @textcolor;
+}
+
+h1 a:hover {
+    color: @hovercolor;
 }
 
 #logo {
@@ -42,4 +60,97 @@ header {
     font-size: 22pt;
     color: @darkgrey;
     padding-bottom: 0.1em;
+    background-color: white;
+    padding: 6px 12px;
+    box-shadow: #252525 0px -3px 3px;
+    font-family: 'Open Sans Condensed', sans-serif;
 }
+
+#logo-hide-gradient {
+    @lhg-height: 15px;
+    
+    height: @lhg-height;
+    bottom: -@lhg-height;
+    position: absolute;
+    background-image: url('../img/logo-hide-gradient.png');
+    width: 130%;
+    left: -15%;
+    background-size: 100%;
+
+}
+
+#main-container {
+    box-shadow: #252525 0px -3px 3px;
+    background: url('../img/content-bg-repeat-x.png') repeat-x;
+}
+
+section {
+    margin-top: 3em;
+}
+
+article {
+    font-size: 10pt;
+}
+
+a, a:visited { 
+    color: @pink; 
+    text-decoration: none;
+}
+a:hover { color: darken(@pink, 10%); }
+
+li {
+    list-style-type: square;
+}
+
+nav {
+    color: @darkgrey;   
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.1em;
+     
+    ul { 
+        padding-top: 1.5em;
+        text-align: center;
+    }
+    li { 
+        display: inline-block;
+        padding: 2px 12px;
+        border: 1px solid;
+        border-color: transparent;
+        border-radius: 2px;
+        margin: 0 2px;
+        &:hover { border-color: #ebebeb; }
+        margin: 0 2%;
+    }
+    
+    
+}
+
+
+/* ---- Post list ---- */
+
+.post {
+    margin-bottom: 2.5em;
+    padding-bottom: 2.5em;
+    border-bottom: 1px solid #f0f0f0;
+    
+    h1 { font-size: 1.6em; }
+}
+
+.post-text-body {
+    h1, h2, h3, h4 { color: @darkgrey; }
+    h1 { font-size: 1.4em; }
+    h2 { font-size: 1.2em; }
+    h3 { font-size: 1.1em; }
+    h4 { font-size: 1.0em; }
+}
+
+.post-link a:before {
+    content: url('../img/link.png');
+    margin: 0px 4px 0 0;
+    height: 1em;
+    display: inline-block;
+}
+
+
+
+

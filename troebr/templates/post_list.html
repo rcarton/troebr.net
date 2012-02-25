@@ -1,0 +1,35 @@
+
+
+<section class="postlist">
+{% for p in posts %}
+    
+    <article class="post post-{{ p.type }}">
+    {% if p.type == 'text' %}
+        <header><h1><a>{{ p.title }}</a></h1>
+        <div class="post-date">Written on {{ p.date |tumblr_time }}</div></header>
+        <div class="post-text-body">
+        {{ p.body|safe }}
+        </div>
+    {% endif %}
+    
+    {% if p.type == 'link' %}
+        <h1><a href="{{ p.url }}">{{ p.title }}</a></h1></header>
+    {% endif %}
+    
+    {% if p.type == 'video' %}
+        <h1><a>{{ p.caption|safe }}</a></h1></header>
+        {{ p.player[1].embed_code|safe }}
+    {% endif %}
+    
+    
+    
+        {# Disabled
+        <pre>
+         {{ p }}
+        </pre> #}
+        
+        
+    </article>
+
+{% endfor %}
+</section>

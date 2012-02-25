@@ -19,6 +19,7 @@ def up():
     pack()
     deploy()
     restart()
+    clean()
 
 def clup():
     """Removes troebr.net/troebr."""
@@ -39,20 +40,25 @@ def deploy():
     put('dist/%s' % FILENAME, '/tmp/%s' % FILENAME)
     # create a place where we can unzip the tarball, then enter
     # that directory and unzip it
-    run('mkdir /tmp/%s' % APPNAME)
+    run('rm -rf /tmp/%s && mkdir /tmp/%s' % (APPNAME, APPNAME))
     with cd('/tmp/%s' % APPNAME):
         run('tar xzf /tmp/%s' % FILENAME)
         run('cp -r /tmp/%s/* %s' % (APPNAME, APPROOT))
-    # now that all is set up, delete the folder again
-    run('rm -rf /tmp/%s /tmp/%s' % (APPNAME, FILENAME))
+    
     # and finally touch the .wsgi file so that mod_wsgi triggers
     # a reload of the application
     # run('touch /var/www/%s.wsgi' % APPNAME)
 
 
+def clean():
+    # now that all is set up, delete the folder again
+    #run('rm -rf /tmp/%s /tmp/%s' % (APPNAME, FILENAME))
+    pass
+    
 def restart():
     """Restart gunicorn."""
-    run('kill -HUP $(cat %s/gunicorn.pid)' % APPROOT)
+    with settings(warn_only=True):    
+        run('kill -HUP $(cat %s/gunicorn.pid)' % APPROOT)
 
 def stop():
     """Stops gunicorn."""
