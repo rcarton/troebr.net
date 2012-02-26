@@ -1,0 +1,140 @@
+
+{% extends "layout.html" %}
+
+{% block extra_css %}
+    <link rel="stylesheet/less" href="static/less/resume.less">
+    <link href='http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+
+
+{% block body %}
+    
+    <div id="resume-title" class="resume-wrapper">
+        <div id="resume-title-top">Rémi CARTON</div>
+        <div id="resume-title-bottom">Software & Web Engineer</div>
+    </div>
+    
+    <section id="resume" class="resume-wrapper">
+        <div id="resume-statement">My name is Remi. I am looking for a <strong>software engineer position</strong>.
+        I have 3 years experience developing softwares and web applications. <br/>
+        
+        </div>
+        
+        <div id="resume-content">
+            
+            <section id="address">
+                <img src="static/img/photo.png">
+                Rémi Carton<br>
+                <script>document.write('remi.carton' + String.fromCharCode(64) + 'gmail' + String.fromCharCode(46) + 'com');</script><br>
+                (+33)671.418.677<br>
+                Montpellier, France<br>
+                26 y. old<br>
+            </section>
+            
+            <section id="skills">
+                <h1>Skills</h1>
+                <ul>
+                    <li>
+                        <h2>Languages</h2>
+                        <ul>
+                            <li>python</li>
+                            <li>c# / asp.net</li>
+                            <li>java</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h2>Web</h2>
+                        <ul>
+                            <li>REST APIs, web services</li>
+                            <li>html5, css3, javascript</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h2>System</h2>
+                        <ul>
+                            <li>Unix/Linux</li>
+                            <li>Windows Server</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h2>Methods</h2>
+                        <ul>
+                            <li>unit testing, continuous integration</li>
+                            <li>xp, test-driven development</li>
+                            <li>agile, scrum</li>
+                        </ul>
+                    </li>
+                </ul>
+               <div style="clear: both"></div>
+            </section>
+            
+            <section id="experience">
+                <h1>Experience</h1>
+                <ul>
+                    <li>
+                        <h2><strong>Project engineer at Sogeti, Capgemini Group</strong>, <span class="date">2011 - 2012</span></h2>
+                        Developed a website for an insurance company. Desktop and mobile terminals, frontend and backend. 
+                    </li>
+                    
+                    <li>
+                        <h2><strong>Software engineer at Amadeus</strong>, <span class="date">2008 - 2011</span></h2>
+                        Developed applications that reduced development cycles and allowed backend testing.
+                    </li>
+                    
+                    <li>
+                        <h2>Software engineer intern at Sopra Group, <span class="date">2008</span></h2>
+                        Developed the soccer streaming website of a TV channel in a team of 5.
+                    </li>
+                    
+                    <li>
+                        <h2>Assistant engineer intern at Saint-Gobain, <span class="date">2007</span></h2>
+                        Developed image processing algorithms for quality control of industrial processes.
+                    </li>
+                </ul>
+                
+            </section>
+            
+            <section id="education">
+                <h1>Education</h1>
+                <ul>
+                    <li>
+                        <h2><strong>Engineering degree in Computer Science</strong>, UTC, <span class="date">2003 - 2008</span></h2>
+                        Information systems and software engineering. 
+                    </li>
+                    
+                    <li>
+                        <h2>French scientific baccalaureate <span class="date">2008</span></h2>
+                        Specialized in mathematics, graduated with honours.
+                    </li>
+                </ul>
+                
+            </section>
+            
+            <section id="languages">
+                <h1>Languages</h1>
+                <ul>
+                    <li>
+                        <h2>English</h2> Fluent
+                    </li>
+                    <li>
+                        <h2>French</h2> Native speaker
+                    </li>
+                </ul>
+            </section>
+            
+            <section id="interests">
+                <h1>Interests &amp; Activities</h1>
+                <div id="interests-content">kiteboarding, photography, squash, hiking &amp; traveling</div>
+            </section>
+            
+            
+        </div>
+    </section>
+    
+    
+
+{% endblock %}

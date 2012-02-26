@@ -17,10 +17,16 @@ flasque.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 @flasque.route('/')
 def index():
-    
+    """Landing page."""
     # TODO: Caching
     posts = tumblr.get_posts()
     return render_template('index.html', posts=posts)
+    
+@flasque.route('/resume')
+def resume():
+    return render_template('resume.html')
+    
+    
     
 
 

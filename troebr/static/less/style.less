@@ -1,5 +1,5 @@
 @import "normalize.less";
-
+@import "static/fonts/roboto/stylesheet.css"
 @import "global-mobile.less";
 
 /* ===== Primary Styles ========================================================
@@ -25,9 +25,15 @@
 @textcolor: #000000;
 @hovercolor: @pink;
 
+
 html, body, header {
     height: 100%;
     color: @textcolor;
+}
+
+.wrapper {
+    max-width: 940px;
+    margin: auto;	
 }
 
 h1, h2, h3, h4 { font-family: 'Open Sans Condensed', sans-serif; }
@@ -61,7 +67,7 @@ h1 a:hover {
     color: @darkgrey;
     padding-bottom: 0.1em;
     background-color: white;
-    padding: 6px 12px;
+    padding: 0px 12px;
     box-shadow: #252525 0px -3px 3px;
     font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -82,10 +88,6 @@ h1 a:hover {
 #main-container {
     box-shadow: #252525 0px -3px 3px;
     background: url('../img/content-bg-repeat-x.png') repeat-x;
-}
-
-section {
-    margin-top: 3em;
 }
 
 article {
