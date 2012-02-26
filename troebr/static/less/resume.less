@@ -1,22 +1,16 @@
 
 
-@headerheight: 85px;
 @darkgrey: #605e5e;
 @mediumgrey: #727171;
 @bgimgcolor: #3b3b3b;
 
+body {  transition:all .2s linear;  -o-transition:all .2s linear;  -moz-transition:all .2s linear;  -webkit-transition:all .2s linear; }
 
 /* ---- Alter the default design ---- */
 #logo { display: none; }
-#header-container { height: @headerheight; }
 #main-container > nav { display: none; }
-
-.resume-wrapper{
-	@width: 80%;
-    width: @width;
-    max-width: 760px;
-    margin: 0 (100% - @width) / 2;
-}
+#looking-for-a-job { display: none; }
+.resume-wrapper {}
 
 #resume {
     margin-top: 1.5em;
@@ -28,23 +22,24 @@
     margin-top: -51px;
     
     #resume-title-top {
-        font-size: 60px;
+        font-size: 46px;
         color: #ffffff;
-        line-height: 54px;
     }
     
     #resume-title-bottom {
-        font-size: 27px;
+        font-size: 20px;
         color: @darkgrey;
     }
 }
 
 #resume-statement {
-	width: 80%;
-	margin: 0 10%;
     font-family: 'Annie use your telescope', Arial, sans serif;
     font-size: 19px;
+    width: 80%;
+    margin: 0 10%;
 }
+
+.resume-left { margin-left: 26px;}
 
 #resume-content {
     box-shadow: #aaa 0px 0px 5px;
@@ -53,7 +48,7 @@
     padding-top: 25px;
     padding-bottom:120px;
     
-    .resume-left { margin-left: 26px;} 
+    
     
     ul { margin: 0; padding: 0;}
     li { list-style: none; padding: 0; margin: 0;}
@@ -74,11 +69,8 @@
     
     h1 {
         color: @darkgrey;
-        float: left;
         font-size: 19px;
-        margin: 0 0 0 -130px;
-        text-align: right;
-        width: 120px;
+        margin: 0 0 4px 4px;
     }
     
     h2 {
@@ -131,15 +123,8 @@
             .resume-left;
             > li {
                 padding: 0; 
-	            width: 50%;
-	            height: 60px;
+                height: 60px;
             }
-            > li:nth-child(even) {
-                float: right;
-            }
-            > li:nth-child(odd) { 
-                float: left;
-            }   
         }
     }
     
@@ -147,10 +132,75 @@
         li { display: inline-block; width: 140px;}
     }
     
+    #interests {
+        height: 80px;
+    }
     #interests-content {
         .resume-left;
+    }  
+}
+
+
+@media only screen and (min-width: 360px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+    
+    #resume-title {
+	    #resume-title-top {
+	        font-size: 60px;
+	        color: #ffffff;
+	        line-height: 54px;
+	    }
+	    
+	    #resume-title-bottom {
+	        font-size: 27px;
+	        color: @darkgrey;
+	    }
     }
     
+    .resume-wrapper{
+	    @width: 80%;
+	    width: @width;
+	    max-width: 760px;
+	    margin: 0 (100% - @width) / 2;
+    }
+    
+    #resume-content {
+        h1 {
+	        float: left;
+	        color: @darkgrey;
+	        margin: 0 0 0 -130px;
+	        text-align: right;
+	        width: 120px;
+        }
+        #skills {
+	        h2 {
+	            font-size: 16px;
+	            height: 100%;
+	            float: left;
+	            width: 30%;
+	            font-weight: 500;
+	        }
+	        
+	        li { padding: 0; }
+	        
+	        > ul {
+	            .resume-left;
+	            > li {
+	                width: 50%;
+	                height: 60px;
+	            }
+	            > li:nth-child(even) {
+	                float: right;
+	            }
+	            > li:nth-child(odd) { 
+	                float: left;
+	            }   
+	        }
+        }
+    }
     
 }
 
