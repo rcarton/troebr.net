@@ -3,9 +3,9 @@
 
 from flask import Flask, request, session, g, redirect, url_for, abort, \
     render_template, flash
-import tumblr
 import time
-
+import tumblr
+from werkzeug.routing import BaseConverter
 
 if __name__ == '__main__':
     DEBUG = True
@@ -17,6 +17,7 @@ SECRET_KEY = 'development key'
 flasque = Flask(__name__)
 flasque.config.from_object(__name__)
 flasque.config.from_envvar('FLASKR_SETTINGS', silent=True)
+flasque.jinja_env.filters['tumblr_time'] = tumblr.tumblr_time_filter
 
 
 @flasque.route('/')
@@ -29,10 +30,12 @@ def index():
 @flasque.route('/resume')
 def resume():
     return render_template('resume.html')
-    
-    
-    
 
+
+@flasque.route('/<slug>-<id>')
+def post(slug, id):
+    post = tumblr.get_post(id)
+    return render_template('post_view.html', post=post)
 
 
 if __name__ == '__main__':

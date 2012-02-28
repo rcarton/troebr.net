@@ -1,0 +1,28 @@
+
+
+<article class="post post-{{ post.type }}">
+{% if post.type == 'text' %}
+    <header><h1><a href="{{ post.page_url }}">{{ post.title }}</a></h1>
+    <div class="post-date">Written on {{ post.date |tumblr_time }}</div></header>
+    <div class="post-text-body">
+    {{ post.body|safe }}
+    </div>
+{% endif %}
+
+{% if post.type == 'link' %}
+    <header><h1><a href="{{ post.url }}">{{ post.title }}</a></h1></header>
+{% endif %}
+
+{% if post.type == 'video' %}
+    <header><h1><a>{{ post.caption|safe }}</a></h1></header>
+    {{ post.player[1].embed_code|safe }}
+{% endif %}
+
+
+
+    {# Disabled
+    <pre>
+     {{ post }}
+    </pre> #}
+
+</article>
