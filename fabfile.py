@@ -55,24 +55,12 @@ def deploy():
 
 def clean():
     # now that all is set up, delete the folder again
-    #run('rm -rf /tmp/%s /tmp/%s' % (APPNAME, FILENAME))
-    pass
+    run('rm -rf /tmp/%s /tmp/%s' % (APPNAME, FILENAME))
     
 def restart():
     """Restart gunicorn."""
     with settings(warn_only=True):    
         run('kill -HUP $(cat %s/gunicorn.pid)' % APPROOT)
-
-def stop():
-    """Stops gunicorn."""
-    
-
-def start():
-    """Starts gunicorn."""
-    #with cd('%s' % APPROOT):
-    #    virtualenv('source bin/activate')
-    #    virtualenv('exec gunicorn -c gunicorn.conf.py troebr.app:app')
-    pass
 
 
 

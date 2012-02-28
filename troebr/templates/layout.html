@@ -15,7 +15,7 @@
 	
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
-    
+	<link rel="stylesheet/less" href="static/fonts/roboto/stylesheet.css">
     
 	<link rel="stylesheet/less" href="static/less/style.less">
     {% block extra_css %}{% endblock %}
@@ -55,8 +55,8 @@
     <div id="header-container">
 		<header class="wrapper clearfix">
 	       <div id="logo">troebr<span style="color: #c1c1c1;">.net</span><div id="logo-hide-gradient"> </div></div>
-           <a id="looking-for-a-job" href="/resume"> </a>
-           <div id="looking-for-a-job-caption">I'm looking for a job,<br> why not checkout my resume?</div>
+           <a id="looking-for-a-job" href="/resume" target="_blank"> </a>
+           <div id="looking-for-a-job-caption">I'm currently looking for a job,<br> why not checkout my resume?</div>
            <script>$("#looking-for-a-job").hover(
         		   function() { $("#looking-for-a-job-caption").fadeIn(150); },
         		   function() { $("#looking-for-a-job-caption").hide(); }

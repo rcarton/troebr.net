@@ -7,7 +7,7 @@ import pyblr
 import urllib
 import urlparse
 from jinja2 import Template, Environment, PackageLoader
-import time
+import time, datetime
 
 REQUEST_TOKEN_URL = 'http://www.tumblr.com/oauth/request_token'
 AUTHORIZATION_URL = 'http://www.tumblr.com/oauth/authorize'
@@ -22,9 +22,18 @@ request_token = dict(urlparse.parse_qsl(content))
 pclient = pyblr.Pyblr(client)
 
 
+# post_cache
+postlist_cache = dict(last_update=datetime.datetime.now(), cache=None)
+
 def get_posts():
     """Retrieves the articles from tumblr."""
-    return PostList(pclient.posts(private_settings.TUMBLR_URL)['posts'])
+    global postlist_cache
+    if not postlist_cache['cache'] or (datetime.datetime.now() - postlist_cache['last_update']).seconds > 600: 
+        print 'querying tumblr...'
+        postlist_cache['cache'] = PostList(pclient.posts(private_settings.TUMBLR_URL)['posts'])
+        postlist_cache['last_update'] = datetime.datetime.now()
+    
+    return postlist_cache['cache']
 
 def tumblr_time_filter(s):
     return time.strftime(u'%A, %B %d, %Y', time.gmtime(time.mktime(time.strptime(s, '%Y-%m-%d %H:%M:%S %Z'))))

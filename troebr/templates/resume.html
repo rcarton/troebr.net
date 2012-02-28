@@ -6,12 +6,35 @@
     <link href='http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope' rel='stylesheet' type='text/css'>
 {% endblock %}
 
-
+{% block extra_js %}
+    
+    <script>
+        var clicked = '';
+        $(document).ready(function(){
+            $('.experience-tags li').click(function(){
+            	clicked = $(this).text().toLowerCase();
+            	$('.experience-tags li').each(function(){
+            		if($(this).text().toLowerCase().localeCompare(clicked) == 0) {
+            			// style selected
+            			$(this).addClass('selected');
+            		} else {
+            			// remove selected
+            			$(this).removeClass('selected');
+            		}
+            	});
+            });
+        	
+        });
+    
+    </script>
+    
+    
+{% endblock %}
 
 {% block body %}
     
     <div id="resume-title" class="resume-wrapper">
-        <div id="resume-title-top">Rémi CARTON</div>
+        <div id="resume-title-top">Remi CARTON</div>
         <div id="resume-title-bottom">Software & Web Engineer</div>
     </div>
     
@@ -48,7 +71,7 @@
                         <h2>Web</h2>
                         <ul>
                             <li>REST APIs, web services</li>
-                            <li>html5, css3, javascript</li>
+                            <li>html5, css3, javascript, jquery</li>
                         </ul>
                     </li>
                     
@@ -57,6 +80,14 @@
                         <ul>
                             <li>Unix/Linux</li>
                             <li>Windows Server</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h2>Database</h2>
+                        <ul>
+                            <li>MySQL</li>
+                            <li>SQL Server 2008</li>
                         </ul>
                     </li>
                     
@@ -77,22 +108,75 @@
                 <ul>
                     <li>
                         <h2><strong>Project engineer at Sogeti, Capgemini Group</strong>, <span class="date">2011 - 2012</span></h2>
-                        Developed a website for an insurance company. Desktop and mobile terminals, frontend and backend. 
+                        Developed a <a href="http://assures.assurances-plaisance.com">website</a> for an insurance company. Desktop and mobile terminals, frontend and backend. 
+                        
+                        <ul class="experience-tags">
+                            <li>asp.net</li>
+                            <li>C#</li>
+                            <li>SQL Server 2008</li>
+                            <li>iis7</li>
+                            <li>javascript</li>
+                            <li>html5</li>
+                            <li>responsive ui</li>
+                            <li>mobile</li>
+                        </ul>
                     </li>
                     
                     <li>
                         <h2><strong>Software engineer at Amadeus</strong>, <span class="date">2008 - 2011</span></h2>
-                        Developed applications that reduced development cycles and allowed backend testing.
+                        Developed a web application for streamlining source code integration and versioning through the 
+                        use of a distributed version control system. 
+                        
+                        <ul class="experience-tags">
+                            <li>python</li>
+                            <li>django</li>
+                            <li>MySQL</li>
+                            <li>unix</li>
+                            <li>mercurial</li>
+                            <li>javascript</li>
+                            <li>apache</li>
+                        </ul>
+                        
+                        Developed an application for end-to-end and black box backend testing. This system used a proprietary grammar,
+                        interpreting python expressions.
+                        
+                        <ul class="experience-tags">
+                            <li>c++</li>
+                            <li>java</li>
+                            <li>python</li>
+                            <li>tcp dump</li>
+                            <li>oracle</li>
+                            <li>unix</li>
+                        </ul>
                     </li>
                     
                     <li>
                         <h2>Software engineer intern at Sopra Group, <span class="date">2008</span></h2>
-                        Developed the soccer streaming website of a TV channel in a team of 5.
+                        Developed a soccer <a href="http://footplus.fr">streaming website</a> for a TV channel in a team of 5.
+                        <ul class="experience-tags">
+                            <li>sso</li>
+                            <li>php5</li>
+                            <li>ldap</li>
+                            <li>MySQL</li>
+                        </ul>
+                        
+                        j2ee development on a telecom company retailer application.
+                        <ul class="experience-tags">
+                            <li>java</li>
+                            <li>j2ee</li>
+                            <li>weblogic</li>
+                            <li>ldap</li>
+                            <li>web services</li>
+                        </ul>
                     </li>
                     
                     <li>
                         <h2>Assistant engineer intern at Saint-Gobain, <span class="date">2007</span></h2>
-                        Developed image processing algorithms for quality control of industrial processes.
+                        Developed image processing algorithms for the quality control of industrial processes.
+                        <ul class="experience-tags">
+                            <li>matlab</li>
+                            <li>c</li>
+                        </ul>
                     </li>
                 </ul>
                 
@@ -124,6 +208,59 @@
                         <h2>French</h2> Native speaker
                     </li>
                 </ul>
+            </section>
+            
+            <section id="projects">
+                <h1>Personal projects</h1>
+                <ul>
+                    <li><h2><a href="">this</a></h2>
+                        <ul class="experience-tags">
+                            <li>python</li>
+                            <li>flask</li>
+                            <li>nginx</li>
+                            <li>oauth</li>
+                            <li>html5</li>
+                            <li>less</li>
+                            <li>rest api</li>
+                            <li>responsive ui</li>
+                            <li>mobile</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h2><a href="http://tumblppr.appspot.com/">html 5 tumblr image stitching application</a></h2>
+                        <ul class="experience-tags">
+                            <li>java</li>
+                            <li>google app engine</li>
+                            <li>html5</li>
+                            <li>canvas</li>
+                            <li>css3</li>
+                            <li>rest api</li>
+                            <li>jquery</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h2><a href="http://github.com/rcarton/pourk">command line tumblr image stitching proof of concept</a></h2>
+                        <ul class="experience-tags">
+                            <li>python</li>
+                            <li>pil</li>
+                            <li>rest api</li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <h2><a href="http://home.troebr.net">django message and image board</a></h2>
+                        <ul class="experience-tags">
+                            <li>python</li>
+                            <li>django</li>
+                            <li>MySQL</li>
+                            <li>rest api</li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+                <div style="clear: both"></div>
             </section>
             
             <section id="interests">

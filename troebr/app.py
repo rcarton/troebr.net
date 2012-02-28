@@ -7,7 +7,11 @@ import tumblr
 import time
 
 
-DEBUG = True
+if __name__ == '__main__':
+    DEBUG = True
+else:
+    DEBUG = False
+    
 SECRET_KEY = 'development key'
 
 flasque = Flask(__name__)
