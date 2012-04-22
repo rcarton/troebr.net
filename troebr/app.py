@@ -39,5 +39,5 @@ def post(slug, id):
 
 
 if __name__ == '__main__':
-    flasque.run('0.0.0.0')
+    flasque.run('0.0.0.0',5001)
 

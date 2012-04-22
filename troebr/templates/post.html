@@ -7,6 +7,7 @@
     <div class="post-text-body">
     {{ post.body|safe }}
     </div>
+    <a href="http://troebr.net/{{ post.page_url }}#disqus_thread" data-disqus-identifier="{{post.id}}">First article</a>
 {% endif %}
 
 {% if post.type == 'link' %}
