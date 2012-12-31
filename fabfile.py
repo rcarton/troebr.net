@@ -11,7 +11,7 @@ DEVROOT = os.path.dirname(os.path.abspath(__file__))
 # the user to use for the remote commands
 env.user = 'troebr'
 # the servers where the commands are executed
-env.hosts = ['new.troebr.net']
+env.hosts = ['lipstr.com']
 env.activate = 'source '+ os.path.join(APPROOT, 'bin/activate')
 env.deploy_user = 'troebr'
 
