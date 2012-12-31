@@ -1,36 +1,101 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-{% extends "layout.html" %}
+    <title>{% block title %}troebr.net{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-{% block extra_css %}
-    <link rel="stylesheet/less" href="static/less/resume.less">
-    <link href='http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope' rel='stylesheet' type='text/css'>
-{% endblock %}
+    <meta name="viewport" content="width=device-width">
+    
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet/less" href="static/fonts/roboto/stylesheet.css">
+    
+    {% block extra_css %}
+        <link rel="stylesheet/less" href="static/less/resume.less">
+        <link href='http://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope' rel='stylesheet' type='text/css'>
+    {% endblock %}
+    
+    <script src="static/js/libs/less-1.2.2.min.js"></script>
+    <script src="static/js/libs/jquery-1.7.1.min.js"></script>
+    
+    <link rel="icon" type="image/png" href="/static/img/favicon.png" />
 
+    <link rel="stylesheet/less" href="less/style.css">
+
+    <script src="static/js/libs/modernizr-2.5.2-respond-1.1.0.min.js"></script>
+    
+    <!-- Analytics -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-24967171-3']);
+      _gaq.push(['_trackPageview']);
+    
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
 {% block extra_js %}
     
     <script>
         var clicked = '';
         $(document).ready(function(){
             $('.experience-tags li').click(function(){
-            	clicked = $(this).text().toLowerCase();
-            	$('.experience-tags li').each(function(){
-            		if($(this).text().toLowerCase().localeCompare(clicked) == 0) {
-            			// style selected
-            			$(this).addClass('selected');
-            		} else {
-            			// remove selected
-            			$(this).removeClass('selected');
-            		}
-            	});
+                clicked = $(this).text().toLowerCase();
+                $('.experience-tags li').each(function(){
+                    if($(this).text().toLowerCase().localeCompare(clicked) == 0) {
+                        // style selected
+                        $(this).addClass('selected');
+                    } else {
+                        // remove selected
+                        $(this).removeClass('selected');
+                    }
+                });
             });
-        	
+            
         });
     
     </script>
     
     
 {% endblock %}
+    
+</head>
+<body>
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
+
+    <div id="header-container">
+        <header class="wrapper clearfix">
+           <a id="logo" href="/">troebr<span style="color: #c1c1c1;">.net</span><div id="logo-hide-gradient"> </div></a>
+           <a id="looking-for-a-job" href="/resume" target="_blank"> </a>
+           <div id="looking-for-a-job-caption">I'm currently looking for a job,<br> why not checkout my resume?</div>
+           <script>$("#looking-for-a-job").hover(
+                   function() { $("#looking-for-a-job-caption").fadeIn(150); },
+                   function() { $("#looking-for-a-job-caption").hide(); }
+                 );</script>
+        </header>
+    </div>
+
+    
+    <div id="main-container">
+        <nav class="wrapper">
+            <ul>
+                <li><a href="/">Journal</a></li>
+                <li><a href="/">Lab</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </nav>
+        <div id="main" class="wrapper clearfix">
 {% block body %}
     
     <div id="resume-title" class="resume-wrapper">
@@ -39,8 +104,8 @@
     </div>
     
     <section id="resume" class="resume-wrapper">
-        <div id="resume-statement">My name is Remi. I am looking for a <strong>software engineer position</strong>.
-        I have 3 years experience developing softwares and web applications. <br/>
+        <div id="resume-statement">My name is Remi. I am a <strong>full stack web developer</strong>.<br>
+        I have 4 years experience developing softwares and web applications. <br>
         
         </div>
         
@@ -48,11 +113,11 @@
             
             <section id="address">
                 <img src="static/img/photo.png">
-                Rémi Carton<br>
+                Remi Carton<br>
                 <script>document.write('remi.carton' + String.fromCharCode(64) + 'gmail' + String.fromCharCode(46) + 'com');</script><br>
-                (+33)671.418.677<br>
-                Montpellier, France<br>
-                26 y. old<br>
+                440-723-1408<br>
+                New York City area<br>
+                27 y. old<br>
             </section>
             
             <section id="skills">
@@ -62,8 +127,9 @@
                         <h2>Languages</h2>
                         <ul>
                             <li>python</li>
-                            <li>c# / asp.net</li>
                             <li>java</li>
+                            <li>javascript</li>
+                            <!--<li>c# / asp.net</li>-->
                         </ul>
                     </li>
                     
@@ -87,6 +153,7 @@
                         <h2>Database</h2>
                         <ul>
                             <li>MySQL</li>
+                            <li>Oracle</li>
                             <li>SQL Server 2008</li>
                         </ul>
                     </li>
@@ -95,8 +162,7 @@
                         <h2>Methods</h2>
                         <ul>
                             <li>unit testing, continuous integration</li>
-                            <li>xp, test-driven development</li>
-                            <li>agile, scrum</li>
+                            <li>test-driven development</li>
                         </ul>
                     </li>
                 </ul>
@@ -106,6 +172,22 @@
             <section id="experience">
                 <h1>Experience</h1>
                 <ul>
+                    <li>
+                        <h2><strong>Software engineer at Coface North America</strong>, <span class="date">2012 - present</span></h2>
+                        Developed a web application to monitor payments, frontend and backend. Maintained java libraries and existing web applications and services.
+                        
+                        <ul class="experience-tags">
+                            <li>java</li>
+                            <li>spring</li>
+                            <li>javascript</li>
+                            <li>hibernate</li>
+                            <li>mysql</li>
+                            <li>oracle</li>
+                            <li>unix</li>
+                            <li>cvs</li>
+                        </ul>
+                    </li>
+                    
                     <li>
                         <h2><strong>Project engineer at Sogeti, Capgemini Group</strong>, <span class="date">2011 - 2012</span></h2>
                         Developed a <a href="http://assures.assurances-plaisance.com">website</a> for an insurance company. Desktop and mobile terminals, frontend and backend. 
@@ -130,11 +212,11 @@
                         <ul class="experience-tags">
                             <li>python</li>
                             <li>django</li>
-                            <li>MySQL</li>
-                            <li>unix</li>
+                            <li>mysql</li>
                             <li>mercurial</li>
                             <li>javascript</li>
                             <li>apache</li>
+                            <li>unix</li>
                         </ul>
                         
                         Developed an application for end-to-end and black box backend testing. This system used a proprietary grammar,
@@ -157,7 +239,7 @@
                             <li>sso</li>
                             <li>php5</li>
                             <li>ldap</li>
-                            <li>MySQL</li>
+                            <li>mysql</li>
                         </ul>
                         
                         j2ee development on a telecom company retailer application.
@@ -213,6 +295,21 @@
             <section id="projects">
                 <h1>Personal projects</h1>
                 <ul>
+                    <li><h2><a href="http://lipstr.com">lipstr.com</a></h2>
+                        <ul class="experience-tags">
+                            <li>python</li>
+                            <li>django</li>
+                            <li>javascript</li>
+                            <li>nginx</li>
+                            <li>gunicorn</li>
+                            <li>mongodb</li>
+                            <li>html5-localstorage</li>
+                            <li>less</li>
+                            <li>knockoutjs</li>
+                            <li>git</li>
+                        </ul>
+                    </li>
+                    
                     <li><h2><a href="">this</a></h2>
                         <ul class="experience-tags">
                             <li>python</li>
@@ -224,6 +321,7 @@
                             <li>rest api</li>
                             <li>responsive ui</li>
                             <li>mobile</li>
+                            <li>git</li>
                         </ul>
                     </li>
                     
@@ -246,6 +344,7 @@
                             <li>python</li>
                             <li>pil</li>
                             <li>rest api</li>
+                            <li>git</li>
                         </ul>
                     </li>
                     
@@ -254,8 +353,10 @@
                         <ul class="experience-tags">
                             <li>python</li>
                             <li>django</li>
-                            <li>MySQL</li>
+                            <li>gunicorn</li>
+                            <li>mysql</li>
                             <li>rest api</li>
+                            <li>git</li>
                         </ul>
                     </li>
                     
@@ -275,3 +376,43 @@
     
 
 {% endblock %}
+        </div> <!-- #main -->
+    </div> <!-- #main-container -->
+
+
+
+    <div id="footer-container">
+        <footer class="wrapper">
+        </footer>
+    </div>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="static/js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<script src="static/js/script.js"></script>
+<script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'troebr';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</body>
+</html>
+
+
+

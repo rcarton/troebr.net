@@ -5,6 +5,7 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
     render_template, flash
 import time
 import tumblr
+import books
 from werkzeug.routing import BaseConverter
 
 if __name__ == '__main__':
@@ -25,7 +26,8 @@ def index():
     """Landing page."""
     # TODO: Caching
     posts = tumblr.get_posts()
-    return render_template('index.html', posts=posts)
+    booklist = books.get_items()
+    return render_template('index.html', posts=posts, books=booklist)
     
 @flasque.route('/resume')
 def resume():

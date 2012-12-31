@@ -2,7 +2,41 @@
 {% extends "layout.html" %}
 
 {% block body %}
-      
-    {{ posts|safe }}
+    <section id="abstract">I was born in France, I like baguette, cheese, and crafting web applications.</section> 
+    
 
+
+    <section id="posts">
+        <h1>posts</h1>
+        {{ posts|safe }}
+    </section>
+    
+    <section id="projects">
+        <h1>projects</h1>
+        <ul>
+            <li>
+                <div class="project-title">lipstr</div>
+                <div class="project-description">trello-like task management/todo</div>
+            </li>
+            <li>
+                <div class="project-title">rachel's museum</div>
+                <div class="project-description">interactive cv (skrollr is neat!)</div>
+            </li>
+            <li>
+                <div class="project-title">tumblr image stitch</div>
+                <div class="project-description"></div>
+            </li>
+        </ul>
+    </section>
+    
+    <section id="books">
+        <h1>books I want to read</h1>
+        <ul>
+            {% for b in books %}
+                {# <li>{{ b.title }}</li> #}
+                <li><a href="{{ b.url }}"><img title="{{ b.title }}" alt="{{ b.title }} cover" src="{{ b.img_url }}"></a></li>
+            {% endfor %}
+        </ul>
+        
+    </section>
 {% endblock %}

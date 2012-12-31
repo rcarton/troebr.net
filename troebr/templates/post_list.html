@@ -1,9 +1,8 @@
 
 
-<section class="postlist">
-
+<ul>
 {% for p in posts %}
-    {{ p|safe }}
+    <li><span class="post-date">{{ p.get_formatted_date() }}</span><a href="{{ p.post.post_url }}">{{ p.post.title }}</a></li>
 {% endfor %}
+</ul>
 
-</section>
