@@ -17,6 +17,14 @@ html, body, header {
     font-size: 13px;
 }
 
+body {
+    background: url(../img/background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 h1, h2, h3, h4 { font-family: 'Open Sans Condensed', sans-serif; }
 p, li { line-height: 1.42em; }
 
@@ -79,10 +87,14 @@ header {
 
 
 #main {
-    max-width: 800px;
+    max-width: 640px;
     width: 100%;
     margin: 0 auto;
     position: relative;
+    background: rgba(255, 255, 255, 0.73);
+    margin-top: 3em;
+    padding-bottom: 2em;
+    box-shadow: rgba(255, 255, 255, 0.28) 0px 3px 0px -1px, rgba(255, 255, 255, 0.38) 0px 7px 0px -3px;
 }
 
 
@@ -116,7 +128,7 @@ header {
     
     
     section {
-        border-left: 1px solid #C46464;
+        /*border-left: 1px solid #C46464;*/
         padding-bottom: 3.3em;
     }
 }
@@ -160,7 +172,7 @@ header {
 #books {
 
     ul {
-        text-align: center;
+        padding: 0 3em;
         
         li {
             display: inline-block;
