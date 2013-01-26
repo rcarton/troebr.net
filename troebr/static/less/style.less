@@ -18,7 +18,7 @@ html, body, header {
 }
 
 body {
-    background: url(../img/background.jpg) no-repeat center center fixed; 
+    background: url(../img/background2.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -107,7 +107,7 @@ header {
 #content {
     margin-top: 2em;
     line-height: 1.2em;
-    
+    min-height: 640px;
 
     ul {
         list-style-type: none;
@@ -156,7 +156,6 @@ header {
     font-family: serif;
     font-style: italic;
     text-align: center;
-    margin-top: 3em;
     border: 0;
 }
 
@@ -194,7 +193,25 @@ header {
         padding: 0 3em;
         
         li {
+        
+            &:first-child {
+                margin-left: 0;
+            }
+            
+            &:hover {
+                margin-right: 35px;
+                transition: all .5s;
+                -moz-transition: all .5s;
+                -o-transition: all .5s;
+                -webkit-transition: all .5s;
+                box-shadow: rgba(0, 0, 0, 0.28) 0px 2px 3px 1px, rgba(0, 0, 0, 0.18) -1px 0px 0px, #E7E7E7 0px 3px 0px -1px, #CECECE 0px 7px 0px -4px;
+            }
+            
             display: inline-block;
+            z-index: 100;
+            margin-left: -35px;
+            //box-shadow: rgba(0, 0, 0, 0.18) -1px 0px 0px;
+            box-shadow: rgba(0, 0, 0, 0.18) -1px 0px 0px, #E7E7E7 0px 3px 0px -1px, #CECECE 0px 7px 0px -4px;
         }
     }
 }
