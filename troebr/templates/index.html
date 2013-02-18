@@ -30,13 +30,22 @@
     </section>
     
     <section id="books">
-        <h1>books I want to read</h1>
+        <h1>books Im reading</h1>
         <ul>
             {% for b in books %}
                 {# <li>{{ b.title }}</li> #}
                 <li><a href="{{ b.url }}"><img title="{{ b.title }}" alt="{{ b.title }} cover" src="{{ b.img_url }}"></a></li>
             {% endfor %}
         </ul>
-        
+        <p>These books are scraped from my <a href="http://www.amazon.com/gp/registry/wishlist/3HTH6XSK2NIZ5">amazon wishlist</a>, it's not always up to date :)</p>
     </section>
+    
+    
+    <section id="about-me">
+        <h1>About me</h1>
+        <p>My name is Remi Carton (easier to say than troebr). I currently live in New Jersey with my girlfriend and a turtle. You can
+        browse my <a href="https://github.com/rcarton">github account</a>, or my <a href="http://www.linkedin.com/in/remicarton">linkedin account</a>. 
+         Oh, and my resume is <a href="http://troebr.net/resume">here</a>.</p>
+    </section>
+    
 {% endblock %}

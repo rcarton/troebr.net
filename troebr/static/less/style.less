@@ -34,12 +34,16 @@ a {
     color: @red;
     
     &:hover, &:visited:hover {
-        color: lighten(@red, 20%);
+        color: darken(@red, 20%);
     }
     
     &:active, &:visited {
         color: @red;
     }
+}
+
+p {
+    margin: .5em 1em;
 }
 
 .left {
@@ -215,6 +219,5 @@ header {
         }
     }
 }
-
 
 
